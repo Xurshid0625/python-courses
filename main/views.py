@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from main.models import Categories
+from main.models import Categories, Product
 
 
 
@@ -7,8 +7,10 @@ from main.models import Categories
 def index(request):
     
     category = Categories.objects.all()
+    product = Product.objects.all()
     
     ctx = {
-        'category': category
+        'category': category,
+        'product': product,
     }
     return render(request, 'main/index.html', ctx)

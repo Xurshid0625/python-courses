@@ -31,7 +31,30 @@
       <!-- Buttons -->
       <div class="d-flex gap-3">
         {% for i in category %}
-          <button class="btn btn-success">{{i.name}}</button>
+          <button class="btn btn-success">{{ i.name }}</button>
+        {% endfor %}
+      </div>
+
+      <h2 style="text-align: center;margin-top: 20px;"><b>Mahsulotlar</b></h2>
+
+      <div class="row">
+        {% for i in product %}
+          <div class="col-4 mt-5">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{ i.image.url }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{ i.name }}</h5>
+                <p class="card-text">{{ i.text }} <br> <b>{{ i.price }} $</b></p>
+                <a href="#" class="btn btn-primary">Keyingisi</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="d-flex gap-3 mt-5">
+        {% for i in category %}
+          <button class="btn btn-success">{{ i.name }}</button>
         {% endfor %}
       </div>
     </div>
