@@ -22,23 +22,21 @@
     </nav>
 
     <div class="container mt-5">
-      <h2 style="text-align: center;margin-top: 20px;"><b>Mahsulotlar</b></h2>
-
+      <h5 style="text-align: center; font-size: 100px;">{{ product_info.categories.name }}</h5>
       <div class="row">
-        {% for i in product_info %}
-          <div class="col-4 mt-5">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{{ i.image.url }}" alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">{{ i.name }}</h5>
-                <p class="card-text">
-                  {{ i.text }} <br /> <b>{{ i.price }} $</b>
-                </p>
-                <a href="{% url 'product_info'  i.id%}" class="btn btn-primary">Keyingisi</a>
-              </div>
-            </div>
+        <div class="col-6">
+          <img style="width: 400px;" src="{{ product_info.image.url }}" alt="" />
+        </div>
+        <div class="col-6">
+          <div class="jumbotron">
+            <h1 class="display-4">{{ product_info.name }}</h1>
+            <p class="lead">
+              {{ product_info.text }} <br /> {{ product_info.price }} $
+            </p>
+            <hr class="my-4" />
+            <a class="btn btn-primary btn-lg" href="#" role="button">Savatga Joylash</a>
           </div>
-        {% endfor %}
+        </div>
       </div>
     </div>
 
